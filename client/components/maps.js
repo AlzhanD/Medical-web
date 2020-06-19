@@ -5,7 +5,7 @@ const Maps = () => {
   return (
     <div>
       <div className="container mx-auto">
-        <div className="flex text-2xl mt-16">КАРТЫ</div>
+        <div className="flex text-4xl mt-16">КАРТЫ</div>
         <div className=" border-solid border-b-2 border-gray-200 h-20 flex items-end ">
           <Link to="/projects" className="mr-5">
             СИПСОК ПРОЕКТОВ

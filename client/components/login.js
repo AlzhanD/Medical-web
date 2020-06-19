@@ -1,15 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
     <div className="container mx-auto flex flex-col ">
-      <div className="mt-24 flex justify-center items-center  flex-col">
-        <img
-          src="https://mimc.education/images/tild3631-6632-4666-b336-393039396632__mimc-logoeng-main-rg.png"
-          alt="icon"
-          className="w-3/12 h-3/12 mr-64"
-        />
-      </div>
+      <Link to="/projects">
+        <div className="mt-24 flex justify-center items-center  flex-col">
+          <img
+            src="https://mimc.education/images/tild3631-6632-4666-b336-393039396632__mimc-logoeng-main-rg.png"
+            alt="icon"
+            className="w-3/12 h-3/12 mr-64"
+          />
+        </div>
+      </Link>
       <div className="flex justify-center items-center  flex-col">
         <div className="w-full max-w-xs">
           <form className="bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4">

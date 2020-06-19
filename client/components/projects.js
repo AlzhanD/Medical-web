@@ -36,10 +36,12 @@ const Projects = () => {
       <div className="flex text-4xl mt-16 ">ПРОЕКТЫ</div>
       <div>
         <div className=" border-solid border-b-2 border-gray-200 h-20 flex items-end ">
-          <Link to="/projects" className="mr-5">
+          <Link to="/projects" className="mr-5 hover:underline hover:text-pink-700 ">
             СИПСОК ПРОЕКТОВ
           </Link>
-          <Link to="/maps"> ДОРОЖНЫЕ КАРТЫ</Link>
+          <Link to="/maps" className="hover:underline hover:text-pink-700 ">
+            ДОРОЖНЫЕ КАРТЫ
+          </Link>
         </div>
         <div className="flex justify-between mt-10 ">
           <div>СИПСОК ПРОЕКТОВ</div>
@@ -49,7 +51,7 @@ const Projects = () => {
               className="hover:bg-pink-800 text-white font-bold py-2 px-4 rounded ml-2 outline-none bg-pink-600 text-white"
               onClick={openModal}
             >
-              add Projects
+              Добавить проект
             </button>
 
             <div>
@@ -76,11 +78,11 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap">
+        <div className="flex -mx-12 flex-wrap">
           {projects.map((el) =>
             toggle === true ? (
-              <div key={el.name} className="w-1/3 px-12 sm:w-1/3 ">
-                <div className="px-5 shadow-xl py-4 mb-5 border-solid border-b-2 border-gray-200 ...  cards ">
+              <div key={el.name} className="w-1/3 px-8 sm:w-1/3 ">
+                <div className=" shadow-xl  mb-5 border-solid border-b-2 border-gray-200 ...  cards ">
                   <div className="relative">
                     <div className="flex justify-center">
                       <img
@@ -89,68 +91,70 @@ const Projects = () => {
                         alt="img"
                       />
                     </div>
-                    <div className="mb-2 text-2xl font-mono mt-2">{el.name}</div>
-                    <div className="mb-1">
-                      <div className="flex">
+                    <div className="p-8">
+                      <div className=" mb-2 text-2xl font-mono ">{el.name}</div>
+                      <div className="mb-1">
+                        <div className="flex">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            width="20"
+                            height="20"
+                          >
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z" />
+                          </svg>
+                          <div className="ml-2 text-l">
+                            {el.dataStart} - {el.dataEnd}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex mb-2 text-l">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
-                          width="24"
-                          height="24"
+                          width="20"
+                          height="20"
                         >
                           <path fill="none" d="M0 0h24v24H0z" />
-                          <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z" />
+                          <path d="M20 22h-2v-2a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3v2H4v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2zm-8-9a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
                         </svg>
-                        <div className="ml-2">
-                          {el.dataStart} - {el.dataEnd}
+                        <div className="ml-2">{el.supervisor}</div>
+                      </div>
+                      <div className="flex mt-2 mb-4 text-l">
+                        <div className="text-xl font-mono">₽</div>
+                        <div className="ml-4">{el.admin}</div>
+                      </div>
+                      <div className="flex justify-between">
+                        <div className="flex w-10 h-10 ">
+                          <img
+                            className=" rounded-full h-8 w-8 flex items-center justify-center mr-2"
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/59/That_Poppy_profile_picture.jpg"
+                            alt="Human"
+                          />
+                          <img
+                            className=" rounded-full h-8 w-8 flex items-center justify-center mr-2"
+                            src="https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4.png"
+                            alt="Human"
+                          />
+                          <img
+                            className=" rounded-full h-8 w-8 flex items-center justify-center"
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/59/That_Poppy_profile_picture.jpg"
+                            alt="Human"
+                          />
+                          <img
+                            className=" rounded-full h-8 w-8 flex items-center justify-center"
+                            src="https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4.png"
+                            alt="Human"
+                          />
                         </div>
-                      </div>
-                    </div>
-                    <div className="flex mb-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        height="24"
-                      >
-                        <path fill="none" d="M0 0h24v24H0z" />
-                        <path d="M20 22h-2v-2a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3v2H4v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2zm-8-9a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
-                      </svg>
-                      <div className="ml-2">{el.supervisor}</div>
-                    </div>
-                    <div className="flex">
-                      <div className="text-2xl font-mono">₽</div>
-                      <div className="ml-4">{el.admin}</div>
-                    </div>
-                    <div className="flex justify-between">
-                      <div className="flex w-10 h-10 ">
-                        <img
-                          className=" rounded-full h-8 w-8 flex items-center justify-center mr-2"
-                          src="https://upload.wikimedia.org/wikipedia/commons/5/59/That_Poppy_profile_picture.jpg"
-                          alt="Human"
-                        />
-                        <img
-                          className=" rounded-full h-8 w-8 flex items-center justify-center mr-2"
-                          src="https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4.png"
-                          alt="Human"
-                        />
-                        <img
-                          className=" rounded-full h-8 w-8 flex items-center justify-center"
-                          src="https://upload.wikimedia.org/wikipedia/commons/5/59/That_Poppy_profile_picture.jpg"
-                          alt="Human"
-                        />
-                        <img
-                          className=" rounded-full h-8 w-8 flex items-center justify-center"
-                          src="https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4.png"
-                          alt="Human"
-                        />
-                      </div>
-                      <div className="flex w-10 h-10 ">
-                        <img
-                          className=" rounded-full h-8 w-8 flex items-center justify-center"
-                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSSLoUHvGCEUuuzUCp9CU2XDO-LFZRPhunRxaobj6MTZ5XsDavK&usqp=CAU"
-                          alt="Human"
-                        />
+                        <div className="flex w-10 h-10 ">
+                          <img
+                            className=" rounded-full h-8 w-8 flex items-center justify-center"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSSLoUHvGCEUuuzUCp9CU2XDO-LFZRPhunRxaobj6MTZ5XsDavK&usqp=CAU"
+                            alt="Human"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
