@@ -1,18 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { signIn, updateLoginField, updatePasswordField } from '../redux/reducers/auth'
 
 const Login = () => {
+  const password = useSelector((store) => store.auth.password)
+  const dispatch = useDispatch()
   return (
     <div className="container mx-auto flex flex-col ">
-      <Link to="/projects">
-        <div className="mt-24 flex justify-center items-center  flex-col">
-          <img
-            src="https://mimc.education/images/tild3631-6632-4666-b336-393039396632__mimc-logoeng-main-rg.png"
-            alt="icon"
-            className="w-3/12 h-3/12 mr-64"
-          />
-        </div>
-      </Link>
+      <div className="mt-24 flex justify-center items-center  flex-col">
+        <img
+          src="https://mimc.education/images/tild3631-6632-4666-b336-393039396632__mimc-logoeng-main-rg.png"
+          alt="icon"
+          className="w-3/12 h-3/12 mr-64"
+        />
+      </div>
+
       <div className="flex justify-center items-center  flex-col">
         <div className="w-full max-w-xs">
           <form className="bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4">
@@ -25,6 +27,7 @@ const Login = () => {
                 id="username"
                 type="text"
                 placeholder="Username"
+                onChange={(e) => dispatch(updateLoginField(e.target.value))}
               />
             </div>
             <div className="mb-6">
@@ -36,6 +39,8 @@ const Login = () => {
                 id="password"
                 type="password"
                 placeholder="******************"
+                onChange={(e) => dispatch(updatePasswordField(e.target.value))}
+                value={password}
               />
               <p className="text-red-500 text-xs italic">Please choose a password.</p>
             </div>
@@ -43,6 +48,7 @@ const Login = () => {
               <button
                 className=" mb-5 bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="button"
+                onClick={() => dispatch(signIn())}
               >
                 Sign In
               </button>

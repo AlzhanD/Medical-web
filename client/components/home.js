@@ -1,6 +1,4 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
-import Maps from './maps'
 
 import Header from './header1'
 import Projects from './projects'
@@ -19,10 +17,8 @@ const Home = () => {
             />
           </div>
         </div>
-
         <div className="container mx-auto ">
-          <Route exact path="/projects" component={() => <Projects />} />
-          <Route exact path="/maps" component={() => <Maps />} />
+          <Projects />
         </div>
       </div>
     </div>

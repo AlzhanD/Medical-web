@@ -32,7 +32,7 @@ const Projects = () => {
     setIsOpen(false)
   }
   return (
-    <div className="container mx-auto">
+    <div>
       <div className="flex text-4xl mt-16 ">ПРОЕКТЫ</div>
       <div>
         <div className=" border-solid border-b-2 border-gray-200 h-20 flex items-end ">
@@ -78,11 +78,11 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <div className="flex -mx-12 flex-wrap">
+        <div className="flex p-10 flex-wrap">
           {projects.map((el) =>
             toggle === true ? (
-              <div key={el.name} className="w-1/3 px-8 sm:w-1/3 ">
-                <div className=" shadow-xl  mb-5 border-solid border-b-2 border-gray-200 ...  cards ">
+              <div key={el.name} className="w-1/3 -mx-5   sm:w-1/3 ">
+                <div className=" shadow-xl   mb-5 border-solid border-b-2 border-gray-200 ...  cards ">
                   <div className="relative">
                     <div className="flex justify-center">
                       <img
@@ -163,7 +163,7 @@ const Projects = () => {
             ) : (
               <div
                 key={el.name}
-                className="w-full flex mt-4 mb-4 justify-between border-b-2 rounded-lg border shadow-lg p-5 items-center"
+                className="w-full mt-4 flex  mb-4 justify-between border-b-2 rounded-lg border shadow-lg py-5 items-center"
               >
                 <div className="mb-2 text-2xl font-mono mt-2">{el.name}</div>
                 <div className="flex">

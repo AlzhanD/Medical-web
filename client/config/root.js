@@ -1,7 +1,6 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Provider } from 'react-redux'
+import { Provider, useSelector } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 import { Switch, Route, Redirect, StaticRouter } from 'react-router-dom'
 
@@ -14,22 +13,19 @@ import Login from '../components/login'
 
 const OnlyAnonymousRoute = ({ component: Component, ...rest }) => {
   const func = (props) =>
-    !!rest.user && !!rest.user.name && !!rest.token ? (
-      <Redirect to={{ pathname: '/' }} />
-    ) : (
-      <Component {...props} />
-    )
+    !!rest.user && !!rest.token ? <Redirect to={{ pathname: '/' }} /> : <Component {...props} />
   return <Route {...rest} render={func} />
 }
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
+  const auth = useSelector((s) => s.auth)
   const func = (props) =>
-    !!rest.user && !!rest.user.name && !!rest.token ? (
+    !!auth.user && !!auth.token ? (
       <Component {...props} />
     ) : (
       <Redirect
         to={{
-          pathname: '/login'
+          pathname: '/'
         }}
       />
     )
@@ -71,9 +67,8 @@ const RootComponent = (props) => {
       <RouterSelector history={history} location={props.location} context={props.context}>
         <Startup>
           <Switch>
-            <Route exact path="/" component={() => <Login />} />
-            <Route exact path="/projects" component={() => <Home />} />
-            <Route exact path="/maps" component={() => <Home />} />
+            <PrivateRoute exact path="/private" component={() => <Home />} />
+            <OnlyAnonymousRoute exact path="/" component={() => <Login />} />
             <Route component={() => <NotFound />} />
           </Switch>
         </Startup>
