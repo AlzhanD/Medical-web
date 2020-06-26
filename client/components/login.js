@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { signIn, updateLoginField, updatePasswordField } from '../redux/reducers/auth'
+import { signIn, signUp, updateLoginField, updatePasswordField } from '../redux/reducers/auth'
 
 const Login = () => {
   const password = useSelector((store) => store.auth.password)
@@ -41,6 +41,11 @@ const Login = () => {
                 placeholder="******************"
                 onChange={(e) => dispatch(updatePasswordField(e.target.value))}
                 value={password}
+                onKeyPress={(ev) => {
+                  if (ev.key === 'Enter') {
+                    dispatch(signIn())
+                  }
+                }}
               />
               <p className="text-red-500 text-xs italic">Please choose a password.</p>
             </div>
@@ -52,12 +57,15 @@ const Login = () => {
               >
                 Sign In
               </button>
-              <a
-                className="inline-block align-baseline font-bold text-sm text-pink-600 hover:text-pink-800"
-                href="#"
-              >
-                Forgot Password?
-              </a>
+              <div className="inline-block align-baseline font-bold text-sm text-pink-600 hover:text-pink-800">
+                <button
+                  className=" mb-5 text-black hover:bg-pink-700 hover:text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  type="button"
+                  onClick={() => dispatch(signUp())}
+                >
+                  Sign Up
+                </button>
+              </div>
             </div>
           </form>
           <p className="text-center text-gray-500 text-xs">

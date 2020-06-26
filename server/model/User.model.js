@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
 
 // eslint-disable-next-line func-names
 userSchema.pre('save', function () {
-  this.password = bcrypt.hashSync(this.password)
+  this.password = bcrypt.hashSync(this.password) // hashing password
 })
 
 userSchema.method({
