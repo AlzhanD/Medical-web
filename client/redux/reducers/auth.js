@@ -67,3 +67,6 @@ export function trySignIn() {
       })
   }
 }
+// export function cookieCleaner() {
+//   axios.get('/api/v1/register', { email, password })
+// }

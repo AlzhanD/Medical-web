@@ -33,25 +33,25 @@ const Projects = () => {
   }
   return (
     <div>
-      <div className="flex text-4xl mt-16 ">ПРОЕКТЫ</div>
+      <div className="flex text-4xl mt-16 ">PROJECTS</div>
       <div>
         <div className=" border-solid border-b-2 border-gray-200 h-20 flex items-end ">
           <Link to="/projects" className="mr-5 hover:underline hover:text-pink-700 ">
-            СИПСОК ПРОЕКТОВ
+            PROJECTS LIST
           </Link>
           <Link to="/maps" className="hover:underline hover:text-pink-700 ">
-            ДОРОЖНЫЕ КАРТЫ
+            MAP
           </Link>
         </div>
         <div className="flex justify-between mt-10 ">
-          <div>СИПСОК ПРОЕКТОВ</div>
+          <div>PROJECTS LIST</div>
           <div className="flex flex-col items-end">
             <button
               type="button"
               className="hover:bg-pink-800 text-white font-bold py-2 px-4 rounded ml-2 outline-none bg-pink-600 text-white"
               onClick={openModal}
             >
-              Добавить проект
+              ADD PROJECT
             </button>
 
             <div>
