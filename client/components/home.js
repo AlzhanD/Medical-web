@@ -1,11 +1,12 @@
 import React from 'react'
 
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Header from './header1'
 import Projects from './projects'
 import { logOut } from '../redux/reducers/auth'
 
 const Home = () => {
+  const userName = useSelector((store) => store.auth.user)
   const dispatch = useDispatch()
   return (
     <div className="flex font-serif">
@@ -13,8 +14,9 @@ const Home = () => {
       <div className="flex  flex-col w-full">
         <div className="flex flex-col   bg-gray-100 p-5 items-end ">
           <div className="flex">
+            <div>{userName.email} </div>
             <img
-              className=" rounded-full h-8 w-8 mr-6"
+              className=" rounded-full h-8 w-8 mr-6 ml-6"
               src="https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4.png"
               alt="Human"
             />

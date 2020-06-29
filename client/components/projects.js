@@ -52,7 +52,7 @@ const Projects = () => {
               <button
                 type="button"
                 className="hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded ml-2 outline-none bg-gray-200 w-12 mt-2 "
-                onClick={() => setToggle(!toggle)}
+                onClick={() => setToggle(true)}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                   <path fill="none" d="M0 0h24v24H0z" />
@@ -62,7 +62,7 @@ const Projects = () => {
               <button
                 type="button"
                 className="hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded ml-2 outline-none bg-gray-200 w-12 mt-2"
-                onClick={() => setToggle(!toggle)}
+                onClick={() => setToggle(false)}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                   <path fill="none" d="M0 0h24v24H0z" />
@@ -157,7 +157,7 @@ const Projects = () => {
             ) : (
               <div
                 key={el.name}
-                className="w-full mt-4 flex  mb-4 justify-between border-b-2 rounded-lg border shadow-lg py-5 items-center"
+                className="w-full mt-4 flex px-5 mb-4 justify-between border-b-2 rounded-lg border shadow-lg py-5 items-center"
               >
                 <div className="mb-2 text-2xl font-mono mt-2">{el.name}</div>
                 <div className="flex">
