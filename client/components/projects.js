@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-// import ReactShadowScroll from 'react-shadow-scroll'
 import { setProjects } from '../redux/reducers/projects'
 
 const Projects = () => {
@@ -36,12 +34,8 @@ const Projects = () => {
       <div className="flex text-4xl mt-16 ">PROJECTS</div>
       <div>
         <div className=" border-solid border-b-2 border-gray-200 h-20 flex items-end ">
-          <Link to="/projects" className="mr-5 hover:underline hover:text-pink-700 ">
-            PROJECTS LIST
-          </Link>
-          <Link to="/maps" className="hover:underline hover:text-pink-700 ">
-            MAP
-          </Link>
+          <div className="mr-5 hover:underline hover:text-pink-700 ">PROJECTS LIST</div>
+          <div className="hover:underline hover:text-pink-700 ">MAP</div>
         </div>
         <div className="flex justify-between mt-10 ">
           <div>PROJECTS LIST</div>
@@ -78,12 +72,12 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <div className="flex p-10 flex-wrap">
+        <div className="flex   flex-wrap">
           {projects.map((el) =>
             toggle === true ? (
-              <div key={el.name} className="w-1/3 -mx-5   sm:w-1/3 ">
-                <div className=" shadow-xl   mb-5 border-solid border-b-2 border-gray-200 ...  cards ">
-                  <div className="relative">
+              <div key={el.name} className="w-1/3 p-5 -mx-5  sm:w-1/3 ">
+                <div className="px-5 ">
+                  <div className="shadow-xl  border-solid border-b-2 border-gray-200 ...  ">
                     <div className="flex justify-center">
                       <img
                         className=" w-full object-contain"

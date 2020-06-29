@@ -33,9 +33,16 @@ export default (state = initialState, action) => {
   }
 }
 
+export function logOut() {
+  cookies.remove('token')
+  window.location.href = '/'
+  return false
+}
+
 export function updateLoginField(email) {
   return { type: UPDATE_LOGIN, email }
 }
+
 export function updatePasswordField(password) {
   return { type: UPDATE_PASSWORD, password }
 }
@@ -67,6 +74,3 @@ export function trySignIn() {
       })
   }
 }
-// export function cookieCleaner() {
-//   axios.get('/api/v1/register', { email, password })
-// }

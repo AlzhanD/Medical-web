@@ -89,7 +89,6 @@ server.post('/api/v1/auth', async (req, res) => {
     res.cookie('token', token, { maxAge: 1000 * 60 * 48 })
     res.json({ status: 'ok', token, user })
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.log(err)
     res.json({ status: 'Error', err })
   }
