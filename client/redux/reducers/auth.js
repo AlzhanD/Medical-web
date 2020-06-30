@@ -5,6 +5,7 @@ import { history } from '..'
 const UPDATE_LOGIN = 'UPDATE_LOGIN'
 const UPDATE_PASSWORD = 'UPDATE_PASSWORD'
 const LOGIN = 'LOGIN'
+const SIGN_OUT = 'SIGN_OUT'
 
 const cookies = new Cookies()
 
@@ -23,6 +24,9 @@ export default (state = initialState, action) => {
     case UPDATE_PASSWORD: {
       return { ...state, password: action.password }
     }
+    case SIGN_OUT: {
+      return { ...state, token: '', password: '', user: {} }
+    }
     case LOGIN: {
       return { ...state, token: action.token, password: '', user: action.user }
     }
@@ -39,8 +43,12 @@ export function logOut() {
   return false
 }
 
-export function updateLoginField(email) {
-  return { type: UPDATE_LOGIN, email }
+export function stateCleaner() {
+  return { type: SIGN_OUT }
+}
+
+export function updateLoginField(password) {
+  return { type: UPDATE_PASSWORD, password }
 }
 
 export function updatePasswordField(password) {

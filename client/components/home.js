@@ -3,7 +3,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Header from './header1'
 import Projects from './projects'
-import { logOut } from '../redux/reducers/auth'
+import { logOut, stateCleaner } from '../redux/reducers/auth'
 
 const Home = () => {
   const userName = useSelector((store) => store.auth.user)
@@ -20,7 +20,13 @@ const Home = () => {
               src="https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4.png"
               alt="Human"
             />
-            <button type="button" onClick={() => dispatch(logOut())}>
+            <button
+              type="button"
+              onClick={() => {
+                dispatch(logOut())
+                dispatch(stateCleaner())
+              }}
+            >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                 <path fill="none" d="M0 0h24v24H0z" />
                 <path d="M4 18h2v2h12V4H6v2H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3zm2-7h7v2H6v3l-5-4 5-4v3z" />
