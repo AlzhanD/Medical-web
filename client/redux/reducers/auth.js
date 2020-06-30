@@ -47,8 +47,8 @@ export function stateCleaner() {
   return { type: SIGN_OUT }
 }
 
-export function updateLoginField(password) {
-  return { type: UPDATE_PASSWORD, password }
+export function updateLoginField(email) {
+  return { type: UPDATE_LOGIN, email }
 }
 
 export function updatePasswordField(password) {

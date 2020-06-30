@@ -16,7 +16,7 @@ import config from './config'
 import Html from '../client/html'
 
 const Root = () => ''
-mongooseServices.connect('mongodb+srv://Alzhan:Aspirine0897@clustera.wpzf1.mongodb.net')
+mongooseServices.connect('mongodb+srv://Alzhan:a123456789@clustera.wpzf1.mongodb.net/auth')
 // const user = new User({
 //   email: 'example2@example.com',
 //   password: 12345
