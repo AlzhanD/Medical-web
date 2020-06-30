@@ -9,7 +9,7 @@ const Home = () => {
   const userName = useSelector((store) => store.auth.user)
   const dispatch = useDispatch()
   return (
-    <div className="flex font-serif">
+    <div className="flex font-sans">
       <Header />
       <div className="flex  flex-col w-full">
         <div className="flex flex-col   bg-gray-100 p-5 items-end ">
